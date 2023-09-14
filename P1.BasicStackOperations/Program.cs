@@ -1,17 +1,13 @@
 ﻿
 int[] ruleNumbers = Console.ReadLine().Split().Select(int.Parse).ToArray();
+int[] inputNumbers = Console.ReadLine().Split().Select(int.Parse).ToArray();
 
 int pushElements = ruleNumbers[0];
 int popElements = ruleNumbers[1];
 int checkIfNumberIsPresent  = ruleNumbers[2];
 
-int[] inputNumbers = Console.ReadLine().Split().Select(int.Parse).ToArray();
-Stack<int> numbersStack = new Stack<int>(pushElements);
+Stack<int> numbersStack = new Stack<int>(inputNumbers.Take(pushElements));
 
-foreach (var number in inputNumbers)
-{
-    numbersStack.Push(number);
-}
 
 for (int i = 0; i < popElements ; i++)
 {
